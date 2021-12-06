@@ -1,12 +1,16 @@
 package com.company;
+
+import java.util.Random;
+
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println(kook(4, 44));
-        System.out.println(kook(50, 4));
-        System.out.println(kook(22, 45));
-        System.out.println(kook(56, 4));
-        System.out.println(kook(8, 56));
+        System.out.println(generateRandomAge());
+        System.out.println(kook(generateRandomAge(), 44));
+        System.out.println(kook(generateRandomAge(), 4));
+        System.out.println(kook(generateRandomAge(), 45));
+        System.out.println(kook(generateRandomAge(), 4));
+        System.out.println(kook(generateRandomAge(), 56));
     }
 
     public static String kook(int age, int temperature) {
@@ -19,5 +23,11 @@ public class Main {
         } else {
             return "dont go";
         }
+
+    }
+    public static int generateRandomAge(){
+        Random random = new Random();
+        int randomNumber = random.nextInt(50);
+        return randomNumber;
     }
 }
